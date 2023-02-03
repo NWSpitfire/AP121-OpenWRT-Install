@@ -52,7 +52,7 @@
 
 2: You will be prompted for the console password, it is either administrator OR AhNf?d@ta06 (this was the one my AP worked with). You should now be logged in.
     
-    3: Run command
+3: Run command
         Version
 
 - NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
