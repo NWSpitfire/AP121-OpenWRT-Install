@@ -25,6 +25,7 @@
 - TFTPD64 TFTP Server [Link](https://pjo2.github.io/tftpd64/)
 - Static IP (Details Below)
 - OpenWRT Image for AP121 - https://downloads.openwrt.org/releases/22.03.3/targets/ath79/nand/openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-sysupgrade.bin
+###### NOTE: incase this link dies or the package is no longer available, I have included the package i have used in this repository. It has not been changed in any way, but use at your own risk. This addition is mainly a backup for me.
 
 ## Initial Setup;
 
