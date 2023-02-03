@@ -15,7 +15,9 @@
 - Cisco Console Cable (RJ45 - DB9 Serial - NOTE: As most PC's don't have RS232 DB9 connectors anymore, I bought an RJ45 - USB [via FTDI232RL+ZT213LEEA chips] Console cable.) [Console Cable](https://www.amazon.co.uk/dp/B07VMD9L3C?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 - 802.3af Gigabit POE adapter (for powering the AP) [TP-Link Example](https://www.amazon.co.uk/TL-PoE160S-Injector-Supplies-Wall-Mount-Distance/dp/B08LQP8CYD/ref=sr_1_3?keywords=gigabit+poe+injector&qid=1675436863&sprefix=gigabit+poe%2Caps%2C62&sr=8-3)
 **OR**
-- Centre Positive Barrel Jack 12v 2A DC Power Supply (The AP121 is Center Positive! I could not find this information anywhere, all of the "official" DC 12v Power Supplies for Aerohive had the Jack wiring label scratched off...) (The AP121 is rated for 1.1A - according to whats printed on the case, but I used 1A & 2A supply with no issues) [Example](https://www.amazon.co.uk/Multibao-Supply-Adaptor-Transformer-Appliances/dp/B08W1X81Z2/ref=sr_1_4?crid=3EWOZMUUHGFA2&keywords=12v%2B1a&qid=1675457909&sprefix=12v%2B1a%2Caps%2C70&sr=8-4&th=1)
+- Centre Positive Barrel Jack 12v 2A DC Power Supply 
+(The AP121 is Center Positive! I could not find this information anywhere, all of the "official" DC 12v Power Supplies for Aerohive had the Jack wiring label scratched off...) 
+(The AP121 is rated for 1.1A - according to whats printed on the case, but I used 1A & 2A supply with no issues) [Example](https://www.amazon.co.uk/Multibao-Supply-Adaptor-Transformer-Appliances/dp/B08W1X81Z2/ref=sr_1_4?crid=3EWOZMUUHGFA2&keywords=12v%2B1a&qid=1675457909&sprefix=12v%2B1a%2Caps%2C70&sr=8-4&th=1)
 - RJ45 Network Cable
 - RJ45 Network Port (Cannot be done over Wi-Fi, ie netbooks)
     
