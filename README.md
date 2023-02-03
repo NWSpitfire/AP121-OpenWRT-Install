@@ -10,9 +10,8 @@
  ## Hardware Requirements;
 
 - Aerohive AP121 - Working
-- Cisco Console Cable (RJ45 - DB9 Serial - NOTE: As most PC's don't have RS232 DB9 connectors anymore, I bought an RJ45 - USB [via FTDI232RL+ZT213LEEA chips] Console cable.)
-    -https://www.amazon.co.uk/dp/B07VMD9L3C?psc=1&ref=ppx_yo2ov_dt_b_product_details
-- 802.1af Gigabit POE adapter (for powering the AP)
+- Cisco Console Cable (RJ45 - DB9 Serial - NOTE: As most PC's don't have RS232 DB9 connectors anymore, I bought an RJ45 - USB [via FTDI232RL+ZT213LEEA chips] Console cable.) [Console Cable](https://www.amazon.co.uk/dp/B07VMD9L3C?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+- 802.3af Gigabit POE adapter (for powering the AP) [TP-Link Example](https://www.amazon.co.uk/TL-PoE160S-Injector-Supplies-Wall-Mount-Distance/dp/B08LQP8CYD/ref=sr_1_3?keywords=gigabit+poe+injector&qid=1675436863&sprefix=gigabit+poe%2Caps%2C62&sr=8-3)
 **OR**
 - Centre Positive Barrel Jack 12v 2A DC Power Supply (The AP is rated for 1.1A, but I used 2A supply with no issues)
 - RJ45 Network Cable
