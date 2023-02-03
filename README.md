@@ -19,8 +19,8 @@
     
 ## Software Requirements;
 
-- PuTTY Serial Console (This is included in the standard version of PuTTY SSH Console)
-- TFTPD64 TFTP Server
+- PuTTY Serial Console (This is included in the standard version of PuTTY SSH Console) [Link](https://putty.org/)
+- TFTPD64 TFTP Server [Link](https://pjo2.github.io/tftpd64/)
 - Static IP (Details Below)
 - OpenWRT Image for AP121 - https://downloads.openwrt.org/releases/22.03.3/targets/ath79/nand/openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-sysupgrade.bin
 
@@ -50,47 +50,56 @@
 
 1: When you are ready, Supply Power to the AP121 and watch the PuTTY serial console window for activity. Soon it should display some text and say "Press any key to stop boot". Press any key NOW.
 
-2: You will be prompted for the console password, it is either administrator OR AhNf?d@ta06 (this was the one my AP worked with). You should now be logged in.
+2: You will be prompted for the console password, it is either 
+    
+    administrator 
+OR 
+    
+    AhNf?d@ta06 (this was the one my AP worked with). 
+You should now be logged in.
     
 3: Run command: 
     
     Version
 
-- NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
-    v1.0.0.43 (Supplied with HiveOS 6.2r1)
-    v1.0.0.4f (Supplied with HiveOS 6.5r4)
-    v1.0.0.50 (Supplied with HiveOS 6.5r3)
-    v1.0.0.52 (Supplied with HiveOS 6.5r8b) - This was the firmare my router used.
-    IF THE FIRMARE IS LISTED LOWER THAN V1.0.0.43: STOP NOW, your bootloader probably isn't compatible.
+###### NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
+- v1.0.0.43 (Supplied with HiveOS 6.2r1)
+- v1.0.0.4f (Supplied with HiveOS 6.5r4)
+- v1.0.0.50 (Supplied with HiveOS 6.5r3)
+- v1.0.0.52 (Supplied with HiveOS 6.5r8b) - This was the firmare my router used.
+- IF THE FIRMARE IS LISTED LOWER THAN V1.0.0.43: STOP NOW, your bootloader probably isn't compatible.
 
 4: Transfer the OpenWRT image to the AP's memory. Be Patient, it might take a while.
     
-    tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin" (Change to your file name)
+    tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin (Change to your file name)
 
-NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
+###### NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
 
 5: Erase the NAND Flash in the Access Point to make way for OpenWRT using the command;
     
     nand erase 0x800000 0x7400000
 
-- Command Breakdown: 0x800000 is the flash memory address in the Access Point.
-                    0x7400000 is the filesize. This is important later.
+###### Command Breakdown: 
+- 0x800000 is the flash memory address in the Access Point.
+- 0x7400000 is the filesize. This is important later.
 
 6: Write the OpenWRT Image to NAND Flash in the AP using the command;
     
     nand write 0x81000000 0x800000 0x7400000
 
-- Command Breakdown: 0x8100000 is the memory address that the OpenWRT image is stored in.
-                     0x800000 is the flash memory address for the Access Point.
-                     0x7400000 is the filesize.
+###### Command Breakdown: 
+- 0x8100000 is the memory address that the OpenWRT image is stored in.
+- 0x800000 is the flash memory address for the Access Point.
+- 0x7400000 is the filesize.
 
-NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun the erase/write command with 0x7400000.
+###### NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun the erase/write command with 0x7400000.
 
 7: If you have done 5: and 6: correctly and recieved "OK" after each, run the command;
     
     reset
+This will restart the router.
 
-- NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.
+###### NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.
 
 8: During Boot watch for the orange light to turn Flashing white. This means the boot process is occuring, monitor the console for errors. If the LED turns solid white then the AP has successfully booted - this may take 90s or more.
 
