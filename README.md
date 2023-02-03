@@ -76,7 +76,7 @@ You should now be logged in.
     
     tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin (Change to your file name)
 
-###### NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
+###### NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly.
 
 5: Erase the NAND Flash in the Access Point to make way for OpenWRT using the command;
     
