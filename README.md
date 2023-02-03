@@ -95,7 +95,7 @@ You should now be logged in.
 - 0x800000 is the flash memory address for the Access Point.
 - 0x7400000 is the filesize.
 
-###### NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun the erase/write command with 0x7400000.
+###### NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun steps 5: & 6: with 0x7400000.
 
 7: If you have done 5: and 6: correctly and recieved "OK" after each, run the command;
     
