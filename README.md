@@ -7,25 +7,25 @@
 
  The usual Disclaimer: USE THIS GUIDE AT YOUR OWN RISK, I DO NOT ACCEPT ANY RESPONSIBILITY FOR BRICKED/BROKEN HARDWARE.
 
- Hardware Requirements;
+ ## Hardware Requirements;
 
 - Aerohive AP121 - Working
 - Cisco Console Cable (RJ45 - DB9 Serial - NOTE: As most PC's don't have RS232 DB9 connectors anymore, I bought an RJ45 - USB [via FTDI232RL+ZT213LEEA chips] Console cable.)
     -https://www.amazon.co.uk/dp/B07VMD9L3C?psc=1&ref=ppx_yo2ov_dt_b_product_details
 - 802.1af Gigabit POE adapter (for powering the AP)
-OR
+**OR**
 - Centre Positive Barrel Jack 12v 2A DC Power Supply (The AP is rated for 1.1A, but I used 2A supply with no issues)
 - RJ45 Network Cable
 - RJ45 Network Port (Cannot be done over Wi-Fi, ie netbooks)
     
-Software Requirements;
+## Software Requirements;
 
 - PuTTY Serial Console (This is included in the standard version of PuTTY SSH Console)
 - TFTPD64 TFTP Server
 - Static IP (Details Below)
 - OpenWRT Image for AP121 - https://downloads.openwrt.org/releases/22.03.3/targets/ath79/nand/openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-sysupgrade.bin
 
-Initial Setup;
+## Initial Setup;
 
 1: Download OpenWRT Image for Aerohive AP121.
 
@@ -47,14 +47,14 @@ Initial Setup;
 
 10: Plug the DC Jack into the 12v plug on the AP121, but do not turn on yet.
 
-Software Setup;
+## Software Setup;
 
 1: When you are ready, Supply Power to the AP121 and watch the PuTTY serial console window for activity. Soon it should display some text and say "Press any key to stop boot". Press any key NOW.
 
 2: You will be prompted for the console password, it is either administrator OR AhNf?d@ta06 (this was the one my AP worked with). You should now be logged in.
     
 3: Run command 
-             "Version"
+    "Version"
 
 - NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
     v1.0.0.43 (Supplied with HiveOS 6.2r1)
@@ -93,7 +93,7 @@ NOTE: Some guides list the filesize as 0x800000 as well as the address, this is 
 9: You can now navigate to 192.168.1.1 in the browser and view the LUCi interface to configure the AP.
     
 
-OpenWRT (LUCi) Configuration:
+## OpenWRT (LUCi) Configuration:
 
 1: OpenWRT web interface default password is:
     passwd
@@ -155,7 +155,7 @@ This will just apply the changes and not check the new link works. I use this as
 - My Network speed from 1m away from the router using 5GHz is 200Mbps (with a 1Gbps WAN) on my iPhone 13. (If you get 100Mbps, check that your SSID operating frequency width is set to 40MHz, not 20MHz).
 - My Network speed from 1m away from the router using 2.4GHz is 75Mbps (with a 1Gbps WAN) on my iPhone 13. (If you get 30Mbps, check that your SSID operating frequency width is set to 40MHz, not 20MHz).
 
-You have now successfully setup your Aerohive AP121 with OpenWRT!
+###### You have now successfully setup your Aerohive AP121 with OpenWRT!
 
 
 
