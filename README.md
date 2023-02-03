@@ -54,7 +54,7 @@ Software Setup;
 2: You will be prompted for the console password, it is either administrator OR AhNf?d@ta06 (this was the one my AP worked with). You should now be logged in.
     
 3: Run command 
-    "Version"
+             "Version"
 
 - NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
     v1.0.0.43 (Supplied with HiveOS 6.2r1)
