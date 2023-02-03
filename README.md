@@ -112,7 +112,7 @@ This will restart the router.
     
     passwd
 
-CHANGE IT!
+**CHANGE IT!**
 
 2: Navigate to;
     Network > Wireless
