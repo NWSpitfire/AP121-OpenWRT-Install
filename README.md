@@ -115,6 +115,7 @@ This will restart the router.
 **CHANGE IT!**
 
 2: Navigate to;
+    
     Network > Wireless
 - The Atheros AR9340 802.11bgn is the 2.4GHz Wireless Adapter.
 - The Generic MAC80211 802.11an is the 5GHz Wireless Adapter.
