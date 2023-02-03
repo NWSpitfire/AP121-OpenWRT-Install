@@ -7,7 +7,7 @@
 
  The usual Disclaimer: USE THIS GUIDE AT YOUR OWN RISK, I DO NOT ACCEPT ANY RESPONSIBILITY FOR BRICKED/BROKEN HARDWARE.
 
- [Picture of AP](https://github.com/NWSpitfire/AP121-OpenWRT-Install/blob/main/70986.jpg?raw=true)
+ ![Picture of AP](https://github.com/NWSpitfire/AP121-OpenWRT-Install/blob/main/70986.jpg?raw=true)
 
  ## Hardware Requirements;
 
