@@ -52,7 +52,9 @@
 
 2: You will be prompted for the console password, it is either administrator OR AhNf?d@ta06 (this was the one my AP worked with). You should now be logged in.
     
-3: Run command: **Version**
+3: Run command: 
+    
+    Version
 
 - NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
     v1.0.0.43 (Supplied with HiveOS 6.2r1)
@@ -63,7 +65,7 @@
 
 4: Transfer the OpenWRT image to the AP's memory. Be Patient, it might take a while.
     
-        **tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin" (Change to your file name)**
+    tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin" (Change to your file name)
 
 NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
 
