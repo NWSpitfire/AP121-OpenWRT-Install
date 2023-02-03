@@ -70,12 +70,14 @@
 NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
 
 5: Erase the NAND Flash in the Access Point to make way for OpenWRT using the command;
+    
     nand erase 0x800000 0x7400000
 
 - Command Breakdown: 0x800000 is the flash memory address in the Access Point.
                     0x7400000 is the filesize. This is important later.
 
 6: Write the OpenWRT Image to NAND Flash in the AP using the command;
+    
     nand write 0x81000000 0x800000 0x7400000
 
 - Command Breakdown: 0x8100000 is the memory address that the OpenWRT image is stored in.
@@ -85,6 +87,7 @@ NOTE: The next instructions erase/write NAND, this is permenant and if done wron
 NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun the erase/write command with 0x7400000.
 
 7: If you have done 5: and 6: correctly and recieved "OK" after each, run the command;
+    
     reset
 
 - NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.
@@ -97,7 +100,9 @@ NOTE: Some guides list the filesize as 0x800000 as well as the address, this is 
 ## OpenWRT (LUCi) Configuration:
 
 1: OpenWRT web interface default password is:
+    
     passwd
+
 CHANGE IT!
 
 2: Navigate to;
@@ -108,6 +113,7 @@ CHANGE IT!
 3: Press Edit on either SSID, Change the operating frequency width to 40MHz. This will get you more speed (almost 2x), although if your having issues with congestion change this to 20MHz.
 
 4: Change the ESSID to a Name of your choice, this is your network ID that all devices will see. I used;
+    
     Aerohive Mesh
 
 5: Navigate to Wireless Security, select WPA3-SAE and set a password in the "KEY" box.
@@ -119,6 +125,7 @@ CHANGE IT!
 8: On your Mobile, ensure the SSID you just setup shows up and can be connected to.
 
 12: Navigate to;
+    
     System > System
 
 10: Under General Settings, change the hostname to whatever you like. This will be the name the AP presents to the network in order for it to be easier identified next to its IP address. As I have 4 Aerohives i names mine Aerohive1 - 4.
@@ -126,24 +133,33 @@ CHANGE IT!
 11: Save and Apply
 
 12: Navigate to;
+    
     Network > Interfaces
 
 13: In interfaces, 1 LAN should be listed as "BR-LAN". Press Edit.
 
 14: Change the Protocol to;
+    
     DHCP-Client
+
 This will disable the DHCP server on the access point and force it to get an IP address from your existing router
 
 15: Navigate to firewall settings and under the Create / Assign firewall-zone dropdown, select;
+    
     unspecified
+
 This will disable the AP's local firewall - fine as your main Router handles it.
 
 16: Press Save and Apply. This will bring up a menu warning about connectivity change. If you press;
+    
     Apply with revert after connectivity loss
+
 You will have 90s to unplug the router network cable from your PC, replug into your existing network, and get LUCi up on a device to accept the changes.
 
 The other button is;
+    
     Apply and keep settings
+
 This will just apply the changes and not check the new link works. I use this as i restart the router before i plug into my existing network.
 
 17: Unplug the AP, then plug into your existing network. I usually power off the AP and restart the AP during this.
