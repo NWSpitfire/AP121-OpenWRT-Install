@@ -58,4 +58,11 @@ Software Setup;
                             0x7400000 is the filesize.
                                 NOTE: Some guides list the filesize as 0x800000 as well as the address, this is wrong and will result in a semi-corrupted OpenWRT install (will show a kernel panic during boot) as only the first 0x800000 was written too. If you have done this, rerun the erase/write command with 0x7400000.
     7: If you have done 5: and 6: correctly and recieved "OK" after each, run the command "reset".
+        - NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.
+    8: During Boot watch for the orange light to turn Flashing white. This means the boot process is occuring, monitor the console for errors. If the LED turns solid white then the AP has successfully booted.
+    9: You can now navigate to 192.168.1.1 in the browser and view the LUCi interface to configure the AP.
+    
+OpenWRT (LUCi) Configuration:
+
+    1:
 
