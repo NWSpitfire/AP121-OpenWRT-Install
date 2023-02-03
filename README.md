@@ -175,6 +175,18 @@ This will just apply the changes and not check the new link works. I use this as
 ###### You have now successfully setup your Aerohive AP121 with OpenWRT!
 
 
+## References, Credits and Thanks
+
+A big thank you to the OpenWRT creators and supporters/contributers.
+
+This guide was made referencing these guides.
+
+[OpenWRT AP121 Info Page - Good info on NAND layout here](https://openwrt.org/toh/aerohive/ap121)
+
+[OpenWRT Forum AP121 Won't Boot - Issue with memory Erase](https://forum.openwrt.org/t/aerohive-ap121-doesnt-boot-after-fresh-install/86957)
+
+[Aerohive AP121 User Guide - for information on the AP](https://docs.aerohive.com/330000/docs/help/english/documentation/Aerohive_AP121-AP141-UserGuide_330093-01.pdf)
+
 
 
 
