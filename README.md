@@ -1,11 +1,13 @@
 # AP121-OpenWRT-Install
- How to Install OpenWRT on AeroHive AP121 Wireless Router.
+ How to Install OpenWRT on AeroHive AP121 Wireless Access Point.
 
  This is a short guide on how I installed and configured my 4 Aerohive AP121's with OpenWRT 22.03.3 in January 2023. This guide will work regardless if the AP's Serial Number is still bound to its original owners ExtremeCloud IQ account/network.
 
  Note: This guide is not for beginners, if you are unsure about what you are doing please read the whole guide before attempting.
 
  The usual Disclaimer: USE THIS GUIDE AT YOUR OWN RISK, I DO NOT ACCEPT ANY RESPONSIBILITY FOR BRICKED/BROKEN HARDWARE.
+
+ [Picture of AP](https://github.com/NWSpitfire/AP121-OpenWRT-Install/blob/main/70986.jpg?raw=true)
 
  ## Hardware Requirements;
 
