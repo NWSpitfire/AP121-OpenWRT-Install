@@ -62,7 +62,8 @@
     IF THE FIRMARE IS LISTED LOWER THAN V1.0.0.43: STOP NOW, your bootloader probably isn't compatible.
 
 4: Transfer the OpenWRT image to the AP's memory. Be Patient, it might take a while.
-    **tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin" (Change to your file name)**
+    
+        **tftpboot 0x81000000 openwrt-22.03.3-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin" (Change to your file name)**
 
 NOTE: The next instructions erase/write NAND, this is permenant and if done wrong may brick the router's firmware or cause OpenWRT to not boot properly (although this is recoverable.)
 
