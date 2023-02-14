@@ -35,21 +35,25 @@
 
 2: Install PuTTY & TFTPD64
 
-3: Disconnect all networks from Computer, go to network settings and set the network adapters IP Address to Static IP 192.168.1.10.
+3: Disconnect all networks & network cables from the Computer, go to network settings and set the main ethernet network adapters' IP Address to **Static IP 192.168.1.10**, with a **subnet of 255.255.255.0**.
 
-4: Open TFTPD64, go to settings and set "Bind TFTP to this Address" to 192.168.1.10 (the box is a dropdown menu).
+4: Run TFTPD64. **It is __Vital__ that you run TFTPD64 in administrator mode, to do this __Right Click__ on the TFTPD64 icon and select __Run As Administrator__, accepting any security prompts that will pop up.** 
 
-5: Create a folder in documents called OpenWRT, place the OpenWRT Firmware image inside this folder. Then, in TFTPD64 set the "Current Directory" to the OpenWRT Folder in Documents.
+###### NOTE: If you do not run TFTPD64 in administrator mode, the TFTP server will be detected by the Aerohive successfully, but it __Will Not__ transfer the file. Instead it will either throw a bad checksum error, or it will sit retrying the connection until it eventually times out with a timeout error. I can only assume this is because TFTPD64 does not have permission to read the .bin file in Documents without administrator privileges? 
 
-6: Plug in your RJ45 - USB console cable to your PC's USB Port and identify the COM Port its using(for example mine was using COM6 - you can use device manager for this)
+5: In TFTPD64, go to settings and set "Bind TFTP to this Address" to 192.168.1.10 (the box is a dropdown menu).
 
-7: Plug one end of the RJ45 Network cable into the ETH0 on the AP121, and the other into your PC's Network Port.
+6: Create a folder in documents called OpenWRT, place the OpenWRT Firmware image inside this folder. Then, in TFTPD64 set the "Current Directory" to the OpenWRT Folder in Documents.
 
-8: Plug the RJ45 console cable into the CONSOLE port on the AP121.
+7: Plug in your RJ45 - USB console cable to your PC's USB Port and identify the COM Port its using(for example mine was using COM6 - you can use device manager for this)
 
-9: Launch PuTTY and select Serial, input your COM port (ie COM6) and ensure the Baud rate is set to 9600. Press start and Click the blank window to ensure its highlighted.
+8: Plug one end of the RJ45 Network cable into the ETH0 on the AP121, and the other into your PC's Network Port.
 
-10: Plug the DC Jack into the 12v plug on the AP121, but do not turn on yet.
+9: Plug the RJ45 console cable into the CONSOLE port on the AP121.
+
+10: Launch PuTTY and select Serial, input your COM port (ie COM6) and ensure the Baud rate is set to 9600. Press start and Click the blank window to ensure its highlighted.
+
+11: Plug the DC Jack into the 12v plug on the AP121, but do not turn on yet.
 
 ## Software Setup;
 
@@ -104,7 +108,7 @@ You should now be logged in.
     reset
 This will restart the router.
 
-###### NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.
+###### **NOTE: During first reboot, if the AP was booting via its secondary backup flash chip located at 0xd00000 then the boot may fail with a Bad Magic number error. Do not panic, allow the boot process to fail 3 times, after which the AP will then default to booting from 0x800000 and should boot OpenWRT Normally.**
 
 8: During Boot watch for the orange light to turn Flashing white. This means the boot process is occuring, monitor the console for errors. If the LED turns solid white then the AP has successfully booted - this may take 90s or more.
 
@@ -188,6 +192,28 @@ This will just apply the changes and not check the new link works. I use this as
 - My Network speed from 1m away from the router using 2.4GHz is 75Mbps (with a 1Gbps WAN) on my iPhone 13. (If you get 30Mbps, check that your SSID operating frequency width is set to 40MHz, not 20MHz).
 
 ###### You have now successfully setup your Aerohive AP121 with OpenWRT!
+
+## Troubleshooting
+
+1: Aerohive gets stuck printing **T** after issuing TFTP command in Software Step 4.
+
+###### This is likely caused by TFTPD64 **NOT** being run in Administrator Mode. To correct this. Close TFTPD64, and rerun Initial Setup Step 4 again.
+
+2: Aerohive prints **Bad Checksum** error after issuing TFTP command in Software Step 4.
+
+###### Ensure **ALL** network connections, except the static ethernet connection to the Aerohive are disabled, this included Wi-Fi too. During testing, leaving Wi-Fi enabled whilst issuing the TFTP command would result in a Bad Checksum being printed. If you are still getting this error, try Troubleshooting Step 1.
+
+3: If the Aerohive is failing to boot with the **Bad Magic Number** error.
+
+###### This is normal for a first boot, as outlined in Software Setup Step 7. 
+
+4: Aerohive prints a Kernel Panic Error during boot.
+
+###### This most likely means the Firmware is corrupted and will need reflashing. Ensure during Nand Write you enter the correct file size. Refer to Software Setup Step 6 for more information.
+
+5: Trying to replace Wpad-Wolfssl with Wpad results in opkg JSON errors in LUCI, as well as "__Package__ cannot be found" errors over SSH.
+
+###### This was an issue I ran into while trying to replace Wpad-Wolfssl with Wpad. After removing Wpad-Wolfssl to install Wpad, opkg would no longer update either through LUCI or SSH and trying to install Wpad would flag the same error. This resulted in me having to Reflash the router with the original OpenWRT .bin image. **I would reccomend people to not try to replace Wpad-wolfssl because of this.** I am currently unsure if this applies for other packages or installing additional packages?
 
 
 ## References, Credits and Thanks
