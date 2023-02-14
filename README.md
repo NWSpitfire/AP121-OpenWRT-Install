@@ -211,7 +211,7 @@ This will just apply the changes and not check the new link works. I use this as
 
 ###### This most likely means the Firmware is corrupted and will need reflashing. Ensure during Nand Write you enter the correct file size. Refer to Software Setup Step 6 for more information.
 
-5: Trying to replace Wpad-Wolfssl with Wpad results in opkg JSON errors in LUCI, as well as "__Package__ cannot be found" errors over SSH.
+5: Trying to replace Wpad-Wolfssl with Wpad results in opkg JSON errors in LUCI, as well as "**__Package__** cannot be found" errors over SSH.
 
 ###### This was an issue I ran into while trying to replace Wpad-Wolfssl with Wpad. After removing Wpad-Wolfssl to install Wpad, opkg would no longer update either through LUCI or SSH and trying to install Wpad would flag the same error. This resulted in me having to Reflash the router with the original OpenWRT .bin image. **I would reccomend people to not try to replace Wpad-wolfssl because of this.** I am currently unsure if this applies for other packages or installing additional packages?
 
