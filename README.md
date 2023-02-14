@@ -39,7 +39,7 @@
 
 4: Run TFTPD64. **It is __Vital__ that you run TFTPD64 in administrator mode, to do this __Right Click__ on the TFTPD64 icon and select __Run As Administrator__, accepting any security prompts that will pop up.** 
 
-###### NOTE: If you do not run TFTPD64 in administrator mode, the TFTP server will be detected by the Aerohive successfully, but it __Will Not__ transfer the file. Instead it will either throw a bad checksum error, or it will sit retrying the connection until it eventually times out with a timeout error. I can only assume this is because TFTPD64 does not have permission to read the .bin file in Documents without administrator privileges? 
+###### NOTE: If you do not run TFTPD64 in administrator mode, the TFTP server will be detected by the Aerohive successfully, but it WILL NOT transfer the file. Instead it will either throw a bad checksum error, or it will sit retrying the connection until it eventually times out with a timeout error. I can only assume this is because TFTPD64 does not have permission to read the .bin file in Documents without administrator privileges.
 
 5: In TFTPD64, go to settings and set "Bind TFTP to this Address" to 192.168.1.10 (the box is a dropdown menu).
 
