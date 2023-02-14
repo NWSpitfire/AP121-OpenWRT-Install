@@ -124,7 +124,7 @@ This will restart the router.
     
     passwd
 
-**CHANGE IT!**
+**CHANGE IT!** (It will be under System > Administration)
 
 2: Navigate to;
     
