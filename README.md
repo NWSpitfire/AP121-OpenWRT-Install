@@ -138,7 +138,9 @@ This will restart the router.
     
     Aerohive Mesh
 
-5: Navigate to Wireless Security, select WPA3-SAE and set a password in the "KEY" box.
+5: Navigate to Wireless Security, under "Encryption" you will see lots of different protocols. WPA2-PSK is currently the Home Standard (This is what my networks use).
+
+###### NOTE: WPA3-SAE is a newer encryption standard than WPA2-PSK. This means its much more secure, but at the cost of being completely incompatible with many (at least in my case) devices. IOT devices (such as Amazon Blink/Alexa, TP-Link and Tuya Smart plugs etc), as well as older iPads (running current IOS Software) could not connect to WPA3 secured Aerohives. Because of this I reccomend selecting WPA2-PSK for both 2.4 & 5GHz networks. If you absolutely want WPA3 on your main SSID, create a seperate SSID for IOT/Non Compatible devices on 2.4GHz, and use WPA2 encryption. This will ensure that the IOT/older devices will work, and save you from having connection failures when you try to bind them.
 
 6: Repeat 3: 4: & 5: for the other SSID (i have my 2.4 & 5GHz networks seperate, using the "Legacy" name to denote the 2.4GHz network - ie Aerohive Legacy.)
 
