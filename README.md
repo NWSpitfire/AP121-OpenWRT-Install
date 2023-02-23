@@ -41,19 +41,23 @@
 
 ###### NOTE: If you do not run TFTPD64 in administrator mode, the TFTP server will be detected by the Aerohive successfully, but it WILL NOT transfer the file. Instead it will either throw a bad checksum error, or it will sit retrying the connection until it eventually times out with a timeout error. I can only assume this is because TFTPD64 does not have permission to read the .bin file in Documents without administrator privileges.
 
-5: In TFTPD64, go to settings and set "Bind TFTP to this Address" to 192.168.1.10 (the box is a dropdown menu).
+5: In TFTPD64 > Settings > Global, ensure "Start Services shows only **TFTP Server**, **Syslog Server**, & **DHCP Server**. If **TFTP Client** is enabled, disable it. 
 
-6: Create a folder in documents called OpenWRT, place the OpenWRT Firmware image inside this folder. Then, in TFTPD64 set the "Current Directory" to the OpenWRT Folder in Documents.
+6: Under Settings > TFTP, ensure TFTP security is set to **None**, and **Option Negotiation**, **Show Progress Bar** & **Translate Unix File Names** are enabled under **Advanced Settings**.
 
-7: Plug in your RJ45 - USB console cable to your PC's USB Port and identify the COM Port its using(for example mine was using COM6 - you can use device manager for this)
+7: In TFTPD64, set the IP Address in "Server Interfaces" to be **192.168.1.10**. Your Network adapter name (For Example, Realtek Gaming 2.5GbE Family Controller) will be listed next to the IP Address.
 
-8: Plug one end of the RJ45 Network cable into the ETH0 on the AP121, and the other into your PC's Network Port.
+8: Create a folder in documents called OpenWRT, place the OpenWRT Firmware image inside this folder. Then, in TFTPD64 set the "Current Directory" to the OpenWRT Folder in Documents. You can also set the "Base Directory" to the same Documents folder. This option can be found in Settings > TFTP > Base Directory.
 
-9: Plug the RJ45 console cable into the CONSOLE port on the AP121.
+9: Plug in your RJ45 - USB console cable to your PC's USB Port and identify the COM Port its using (for example mine was using COM6 - you can use device manager for this).
 
-10: Launch PuTTY and select Serial, input your COM port (ie COM6) and ensure the Baud rate is set to 9600. Press start and Click the blank window to ensure its highlighted.
+10: Plug one end of the RJ45 Network cable into the ETH0 on the AP121, and the other into your PC's Network Port.
 
-11: Plug the DC Jack into the 12v plug on the AP121, but do not turn on yet.
+11: Plug the RJ45 console cable into the CONSOLE port on the AP121.
+
+12: Launch PuTTY and select Serial, input your COM port (ie COM6) and ensure the Baud rate is set to 9600. Press start and Click the blank window to ensure its highlighted.
+
+13: Plug the DC Jack into the 12v plug on the AP121, but do not turn on yet.
 
 ## Software Setup;
 
