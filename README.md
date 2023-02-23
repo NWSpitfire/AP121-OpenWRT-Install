@@ -41,11 +41,11 @@
 
 ###### NOTE: If you do not run TFTPD64 in administrator mode, the TFTP server will be detected by the Aerohive successfully, but it WILL NOT transfer the file. Instead it will either throw a bad checksum error, or it will sit retrying the connection until it eventually times out with a timeout error. I can only assume this is because TFTPD64 does not have permission to read the .bin file in Documents without administrator privileges.
 
-5: In TFTPD64 > Settings > Global, ensure "Start Services shows only **TFTP Server**, **Syslog Server**, & **DHCP Server**. If **TFTP Client** is enabled, disable it. 
+5: In TFTPD64 > Settings > Global, ensure "Start Services" shows only "**TFTP Server**", "**Syslog Server**", & "**DHCP Server**". If "**TFTP Client**" is enabled, disable it. 
 
-6: Under Settings > TFTP, ensure TFTP security is set to **None**, and **Option Negotiation**, **Show Progress Bar** & **Translate Unix File Names** are enabled under **Advanced Settings**.
+6: Under Settings > TFTP, ensure TFTP security is set to "**None**", and "**Option Negotiation**", "**Show Progress Bar**" & "**Translate Unix File Names**" are enabled under "**Advanced Settings**".
 
-7: In TFTPD64, set the IP Address in "Server Interfaces" to be **192.168.1.10**. Your Network adapter name (For Example, Realtek Gaming 2.5GbE Family Controller) will be listed next to the IP Address.
+7: In TFTPD64, set the IP Address in "Server Interfaces" to be "**192.168.1.10**". Your Network adapter name (For Example, Realtek Gaming 2.5GbE Family Controller) will be listed next to the IP Address.
 
 8: Create a folder in documents called OpenWRT, place the OpenWRT Firmware image inside this folder. Then, in TFTPD64 set the "Current Directory" to the OpenWRT Folder in Documents. You can also set the "Base Directory" to the same Documents folder. This option can be found in Settings > TFTP > Base Directory.
 
