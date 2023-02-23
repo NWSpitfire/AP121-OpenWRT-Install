@@ -73,7 +73,7 @@ You should now be logged in.
     
 3: Run command: 
     
-    Version
+    version
 
 ###### NOTE: The following bootloaders are listed as compatible with OpenWRT (Via their website), these are:
 - v1.0.0.43 (Supplied with HiveOS 6.2r1)
@@ -81,6 +81,8 @@ You should now be logged in.
 - v1.0.0.50 (Supplied with HiveOS 6.5r3)
 - v1.0.0.52 (Supplied with HiveOS 6.5r8b) - This was the firmare my router used.
 - IF THE FIRMARE IS LISTED LOWER THAN V1.0.0.43: STOP NOW, your bootloader probably isn't compatible.
+
+###### NOTE 2: If the Command "Version" Fails with a "version command not found" (or something to that effect). This happened to me when I copy/pasted the command "version" from the Github page. When i manually typed the command into the terminal the command ran just fine and printed the bootloader version.
 
 4: Transfer the OpenWRT image to the AP's memory. Be Patient, it might take a while. (Change to your file name in the command - the "openwrt-22.03.3....." part)
     
