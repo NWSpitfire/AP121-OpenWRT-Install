@@ -238,7 +238,7 @@ This guide was made referencing these guides.
 [OpenWRT Forum AP121 Won't Boot - Issue with memory Erase](https://forum.openwrt.org/t/aerohive-ap121-doesnt-boot-after-fresh-install/86957)
 
 [Aerohive AP121 User Guide - for information on the AP](https://docs.aerohive.com/330000/docs/help/english/documentation/Aerohive_AP121-AP141-UserGuide_330093-01.pdf)
-
+[I have included a backup of this in the files section incase it is ever removed from the aerohive website]
 
 
 
