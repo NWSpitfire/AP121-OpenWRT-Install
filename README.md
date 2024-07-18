@@ -294,6 +294,8 @@ You should now be able to access the web based configuration dashboard where you
 
 A big thank you to the OpenWRT creators and supporters/contributers.
 
+diggerbonk - Issue #2 report and guide for firmware 1.0.0.39
+
 This guide was made referencing these guides.
 
 [OpenWRT AP121 Info Page - Good info on NAND layout here](https://openwrt.org/toh/aerohive/ap121)
