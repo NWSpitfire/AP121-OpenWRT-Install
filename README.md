@@ -82,6 +82,8 @@ You should now be logged in.
 - v1.0.0.52 (Supplied with HiveOS 6.5r8b) - This was the firmare my router used.
 - IF THE FIRMARE IS LISTED LOWER THAN V1.0.0.43: STOP NOW, your bootloader probably isn't compatible.
 
+- (Issue #2) - Firmware version v1.0.0.39 has been reported to work. I am unable to test this, but see "Additional Firmware Troubleshooting" below to view steps for flashing AeroHive's with this firmware version.
+
 ###### NOTE 2: If the Command "Version" Fails with a "version command not found" (or something to that effect). This happened to me when I copy/pasted the command "version" from the Github page. When i manually typed the command into the terminal the command ran just fine and printed the bootloader version.
 
 4: Transfer the OpenWRT image to the AP's memory. Be Patient, it might take a while. (Change to your file name in the command - the "openwrt-22.03.3....." part)
@@ -203,6 +205,67 @@ This will just apply the changes and not check the new link works. I use this as
 - My Network speed from 1m away from the router using 2.4GHz is 75Mbps (with a 1Gbps WAN) on my iPhone 13. (If you get 30Mbps, check that your SSID operating frequency width is set to 40MHz, not 20MHz).
 
 ###### You have now successfully setup your Aerohive AP121 with OpenWRT!
+
+## Additional Firmware Troubleshooting
+
+### Flashing AeroHive's with Firmware Version 1.0.0.39
+
+###### (This was submitted in Issue #2, I am unable to test this as I don't own an AeroHive with this firmware version so use at your own risk. Many thanks (and full credit) to diggerbonk for his flashing steps below).
+
+Just wanted to let you know I was able to install OpenWRT on an AP121 with the 1.0.0.39 bootloader 
+
+```
+ar7240> version
+
+Aerohive Boot Loader v1.0.0.39, Build time Mon Dec 23 11:54:09 2013
+
+ar7240>
+```
+
+Using the following instructions:
+
+1) Connect to the AP's serial port (9600 8N1)
+2) Press space to interrupt the boot process
+3) Enter the password (either 'administrator' or 'AhNf?d@ta06')
+4) Execute the following commands:
+
+```
+dhcp; 
+setenv serverip 192.168.0.12; 
+tftpboot 0x81000000 openwrt-23.05.0-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin; 
+// Make note of the size returned by above commmend (eg 0x9a0000)
+nand erase 0x800000 <size>; 
+nand write 0x81000000 0x800000 <size>; 
+reset;
+```
+
+5) Press return to activate the console, you should see:
+```
+
+ _______                     ________        __
+|       |.-----.-----.-----.|  |  |  |.----.|  |_
+|   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+|_______||   __|_____|__|__||________||__|  |____|
+         |__| W I R E L E S S   F R E E D O M
+-----------------------------------------------------
+```
+
+6) Edit /etc/config/network so that eth0 uses dhcp:
+
+  config interface 'loopback'
+       option ifname 'lo'
+       option proto 'static'
+       option ipaddr '127.0.0.1'
+       option netmask '255.0.0.0'
+  config globals 'globals'
+       option ula_prefix 'fd5c:8cdc:2566::/48'
+  config interface 'lan'
+       option type 'bridge'
+       option ifname 'eth0'
+       option proto 'dhcp'  
+7) Reboot
+
+You should now be able to access the web based configuration dashboard where you can set up the wifi radios, set a root password, etc.
 
 ## Troubleshooting
 
